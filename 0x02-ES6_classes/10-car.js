@@ -17,17 +17,25 @@ export default class Car {
     return this._motor;
   }
 
-  get color() {
-    this._color = value;
+  set motor(value) {
+    this._motor = value;
   }
 
-  static get [Symbol.species]() {
+   get color() {
+     this._color = value;
+   }
+
+   set color(value) {
+     this._color = value;
+   }
+
+   static get [Symbol.species]() {
      return this;
-  }
+   }
 
-  cloneCar() {
-    const Species = this.constructor[Symbol.species];
+   cloneCar() {
+     const Species = this.constructor[Symbol.species];
 
-    return new Species();
-  }
+     return new Species();
+   }
 }
